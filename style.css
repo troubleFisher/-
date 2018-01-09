@@ -1,0 +1,14 @@
+.images{
+    display: flex;
+    align-items: flex-start;
+    transition: all 0.3s;
+}
+
+.windows{
+    width: 201px;
+    overflow: hidden;
+}
+
+.grey{
+    background: #a29c91;
+}
