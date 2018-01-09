@@ -42,21 +42,19 @@ var timerId = setTimer()
 
 //定闹钟
 function setTimer() {
-    return setInterval(autoCarousel, 1000)
-    function autoCarousel() {
+    return setInterval(function () {
         t += 1
         playSlide(t%counts)
-    }
+    }, 3000)
+}
+//播放第几张幻灯片
+function playSlide(index) {
+    allButtons.eq(index).trigger('click')
 }
 
 //激活button
 function activeButton($button) {
     $button.addClass('grey').siblings('.grey').removeClass('grey')
-}
-
-//播放第几张幻灯片
-function playSlide(index) {
-    allButtons.eq(index).trigger('click')
 }
 
 //鼠标移上去，自动轮播暂停
@@ -66,5 +64,5 @@ $('.windows').on('mouseenter',function () {
 
 //鼠标移除，自动轮播继续
 $('.windows').on('mouseleave',function () {
-    var timerId = setTimer()
+    timerId = setTimer()
 });
